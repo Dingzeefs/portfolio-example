@@ -28,8 +28,6 @@ The batch size experiments yielded perhaps the most actionable insights. Large n
 *Line plot showing validation accuracy vs epochs for different network sizes (64-64, 128-128, 256-256). Demonstrates convergence patterns and optimal training duration for each architecture.*
 
 ### Batch Size Sensitivity Analysis
-1-hypertuning-gridsearch/CleanShot 2025-09-18 at 18.17.09@2x.png
-*Bar chart comparing 256-256 network performance across batch sizes (16, 32, 64, 128). Shows clear optimum at batch size 32, illustrating the regularization-stability trade-off.*
 
 ## Critical Interactions Discovered
 
