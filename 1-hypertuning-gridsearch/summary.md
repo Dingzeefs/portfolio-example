@@ -23,11 +23,6 @@ The batch size experiments yielded perhaps the most actionable insights. Large n
 1-hypertuning-gridsearch/width_analysis.png
 *Heatmap showing accuracy across different width-depth combinations. Diagonal pattern indicates balanced architectures perform best, with sweet spot at 256-256 configuration.*
 
-### Training Dynamics Across Network Sizes
-1-hypertuning-gridsearch/epochs_analysis.png
-*Line plot showing validation accuracy vs epochs for different network sizes (64-64, 128-128, 256-256). Demonstrates convergence patterns and optimal training duration for each architecture.*
-
-### Batch Size Sensitivity Analysis
 
 ## Critical Interactions Discovered
 
