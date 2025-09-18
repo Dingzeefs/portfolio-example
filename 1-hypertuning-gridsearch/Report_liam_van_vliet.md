@@ -1,4 +1,3 @@
-# Summary week 1
 # Neural Network Hyperparameter Interactions: A Fashion-MNIST Study
 
 When building neural networks, I wondered how different settings would work together rather than in isolation. The main question driving this research was whether network width, depth, training time, and batch size would interact in predictable ways when classifying Fashion-MNIST images.
@@ -23,13 +22,6 @@ The batch size experiments yielded perhaps the most actionable insights. Large n
 1-hypertuning-gridsearch/width_analysis.png
 *Heatmap showing accuracy across different width-depth combinations. Diagonal pattern indicates balanced architectures perform best, with sweet spot at 256-256 configuration.*
 
-### Training Dynamics Across Network Sizes
-1-hypertuning-gridsearch/epochs_analysis.png
-*Line plot showing validation accuracy vs epochs for different network sizes (64-64, 128-128, 256-256). Demonstrates convergence patterns and optimal training duration for each architecture.*
-
-### Batch Size Sensitivity Analysis
-1-hypertuning-gridsearch/CleanShot 2025-09-18 at 18.17.09@2x.png
-*Bar chart comparing 256-256 network performance across batch sizes (16, 32, 64, 128). Shows clear optimum at batch size 32, illustrating the regularization-stability trade-off.*
 
 ## Critical Interactions Discovered
 
@@ -60,7 +52,3 @@ The batch size experiments yielded perhaps the most actionable insights. Large n
 
 ## Conclusion
 Hyperparameter interactions in neural networks follow predictable patterns: balanced architectures outperform unbalanced ones, larger networks need more training time and smaller batches, and there exists a clear efficiency frontier where additional capacity provides diminishing returns. For Fashion-MNIST, this frontier occurs around 256-256 architecture with 269K parameters.
-
-Find the [notebook](./notebook.ipynb) and the [instructions](./instructions.md)
-
-[Go back to Homepage](../README.md)

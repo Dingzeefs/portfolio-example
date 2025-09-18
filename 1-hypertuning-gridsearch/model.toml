@@ -3,9 +3,11 @@ training = true
 num_classes = 10
 units1 = 256
 units2 = 256
+units3 = 256
 
 [types]
 training = "bool"
 num_classes = "int"
 units1 = "int"
 units2 = "int"
+units3 = "int"

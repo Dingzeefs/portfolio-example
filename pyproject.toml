@@ -8,6 +8,8 @@ dependencies = [
     "hyperopt>=0.2.7",
     "mads-datasets[torch]>=0.3.14",
     "mltrainer>=0.2.5",
+    "seaborn>=0.13.2",
+    "toml>=0.10.2",
     "tomlserializer>=0.2.0",
 ]
 
