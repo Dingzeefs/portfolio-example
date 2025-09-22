@@ -11,6 +11,12 @@ dependencies = [
     "seaborn>=0.13.2",
     "toml>=0.10.2",
     "tomlserializer>=0.2.0",
+    "mlflow>=3.0.0",
+    "loguru>=0.7.0",
+    "matplotlib>=3.5.0",
+    "pandas>=1.5.0",
+    "numpy>=1.21.0",
+    "torchinfo>=1.8.0",
 ]
 
 [dependency-groups]

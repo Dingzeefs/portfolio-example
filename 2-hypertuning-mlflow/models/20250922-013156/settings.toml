@@ -1,0 +1,31 @@
+[model]
+epochs = 3
+metrics = ["Accuracy"]
+logdir = "/Users/DINGZEEFS/MADS-MachineLearning-course/notebooks/2_convolutions/models"
+train_steps = 100
+valid_steps = 50
+reporttypes = ["ReportTypes.MLFLOW", "ReportTypes.TOML"]
+[model.optimizer_kwargs]
+lr = 0.001
+weight_decay = 1e-05
+
+[model.scheduler_kwargs]
+factor = 0.1
+patience = 10
+
+[model.earlystop_kwargs]
+save = false
+verbose = true
+patience = 10
+
+
+[types]
+epochs = "int"
+metrics = "list"
+logdir = "PosixPath"
+train_steps = "int"
+valid_steps = "int"
+reporttypes = "list"
+optimizer_kwargs = "dict"
+scheduler_kwargs = "dict"
+earlystop_kwargs = "dict"
