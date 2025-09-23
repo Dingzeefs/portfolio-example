@@ -54,6 +54,6 @@ The batch size experiments yielded perhaps the most actionable insights. Large n
 ## Conclusion
 Hyperparameter interactions in neural networks follow predictable patterns: balanced architectures outperform unbalanced ones, larger networks need more training time and smaller batches, and there exists a clear efficiency frontier where additional capacity provides diminishing returns. For Fashion-MNIST, this frontier occurs around 256-256 architecture with 269K parameters.
 
-Find the [notebook](./notebook.ipynb) and the [instructions](./instructions.md)
+Find the [notebook](./notebook.ipynb) and the [instructions](./instructions.md) and the [ethics_assignment](Portfolio%20assignment%201%20-%20Liam%20van%20Vliet%20-%20Ethics%20MADS.pdf)
 
 [Go back to Homepage](../README.md)

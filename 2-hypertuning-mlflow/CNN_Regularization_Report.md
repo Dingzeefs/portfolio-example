@@ -1,4 +1,3 @@
-# Summary week 2
 # CNN Architecture and Regularization Synergies: A Fashion-MNIST Investigation
 
 My initial hypothesis was that regularization techniques would show diminishing returns when combined - that dropout and normalization would partially overlap in their effects, leading to minimal additional gains when used together. I also suspected that CNNs, with their inherent spatial structure and weight sharing, would need much lighter regularization than fully connected networks, perhaps around 0.1 dropout rate rather than the typical 0.5 used in dense layers.
@@ -45,8 +44,3 @@ The experiments revealed several critical patterns about CNN regularization:
 This experimentation demonstrates that regularization in CNNs is not simply about preventing overfitting - it's about creating the right conditions for effective learning. The synergy between dropout and normalization shows that understanding mechanism matters more than following rules of thumb. Light stochastic regularization combined with strong deterministic normalization creates an environment where CNNs can leverage their full capacity without overfitting.
 
 The systematic, hypothesis-driven approach proved essential for uncovering these interactions. Random hyperparameter search might have found good configurations, but understanding why certain combinations work enables principled application to new problems. For Fashion-MNIST, this methodology led to a 60% improvement over baseline - from 67.6% to 27.0% test loss - demonstrating the power in deep learning optimization.
-
-Find the [notebook](./notebook.ipynb) 
-Find the [instructions](./instructions.md)
-
-[Go back to Homepage](../README.md
