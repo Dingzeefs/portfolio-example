@@ -1,7 +1,3 @@
-# Summary week 3
-
-Find the [notebook](./notebook.ipynb) and the [ethics_assignment_2](./Liam_van_Vliet-Ethics_assignment2%20(1).pdf) the [instructions](./instructions.md)
-
 # When Simple Beats Complex: Surprising Lessons from Smartwatch Gesture Recognition
 I started this experiment with humble expectations. Gesture recognition from accelerometer data seemed challenging enough that I hypothesized a simple GRU would struggle to reach beyond 60-75% accuracy. I prepared an elaborate experimental plan testing everything from deep LSTM networks to Conv1D-GRU hybrids, expecting to need every trick in the book to surpass the 90% accuracy target. The dataset contained 20 distinct gestures captured from smartwatch accelerometers - seemingly complex enough to require sophisticated temporal modeling.
 
@@ -56,7 +52,3 @@ notebooks/3_recurrent_networks/experiment_log/overview.png
 
 
 
-
-
-
-[Go back to Homepage](../README.md)
