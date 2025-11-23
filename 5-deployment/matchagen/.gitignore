@@ -8,6 +8,11 @@ __pycache__/
 venv/
 ENV/
 
+# Environment variables
+.env
+.env.*
+!.env.example
+
 # Model artifacts (too large for git)
 artefacts/
 
