@@ -1,0 +1,22 @@
+[data]
+assets_dir = "assets"
+artefacts_dir = "artefacts"
+filename = "matcha_recipes_combined_cleaned.txt"
+sources = [
+    "https://jadeleafmatcha.com/blogs/recipes",
+    "https://www.matcha.com/recipes",
+]
+
+[model]
+model_name = "chef-transformer-t5"
+max_length = 512
+temperature = 0.8
+num_return_sequences = 1
+repetition_penalty = 1.2
+
+[training]
+epochs = 2
+learning_rate = 5e-5
+batch_size = 4
+save_steps = 100
+warmup_steps = 50

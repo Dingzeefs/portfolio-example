@@ -1,0 +1,14 @@
+
+.git
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+node_modules
+frontend/node_modules
+frontend/dist
+assets
+# We need artefacts for the model, so don't ignore it
+# We need dist for the wheel

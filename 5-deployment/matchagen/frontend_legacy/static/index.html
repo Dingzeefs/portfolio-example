@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Recipe Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🍵 Matcha Recipe Generator</h1>
+        <p class="subtitle">Generate creative matcha recipes using AI</p>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="temperature">
+                    Creativity (Temperature):
+                    <span id="temp-value">0.8</span>
+                </label>
+                <input
+                    type="range"
+                    id="temperature"
+                    min="0.5"
+                    max="1.5"
+                    step="0.1"
+                    value="0.8"
+                >
+                <p class="hint">
+                    Lower = more predictable, Higher = more creative
+                </p>
+            </div>
+
+            <div class="control-group">
+                <label for="inspiration">
+                    Inspiration (optional):
+                </label>
+                <input
+                    type="text"
+                    id="inspiration"
+                    placeholder="e.g., mango, ice cream, cookies, berries"
+                >
+                <p class="hint">
+                    Add keywords to inspire the recipe
+                </p>
+            </div>
+
+            <button id="generate-btn">Generate Recipe</button>
+        </div>
+
+        <div id="loading" style="display:none;">
+            <div class="spinner"></div>
+            <p>Generating your matcha recipe...</p>
+        </div>
+
+        <div id="recipe-output" style="display:none;">
+            <h2>Your Matcha Recipe</h2>
+            <div id="recipe-content"></div>
+        </div>
+    </div>
+
+    <script>
+        const tempSlider = document.getElementById('temperature');
+        const tempValue = document.getElementById('temp-value');
+        const inspirationInput = document.getElementById('inspiration');
+        const generateBtn = document.getElementById('generate-btn');
+        const loading = document.getElementById('loading');
+        const output = document.getElementById('recipe-output');
+        const content = document.getElementById('recipe-content');
+
+        tempSlider.addEventListener('input', (e) => {
+            tempValue.textContent = e.target.value;
+        });
+
+        generateBtn.addEventListener('click', async () => {
+            const temperature = parseFloat(tempSlider.value);
+            const inspiration = inspirationInput.value.trim();
+
+            generateBtn.disabled = true;
+            loading.style.display = 'block';
+            output.style.display = 'none';
+
+            try {
+                const response = await fetch('/generate', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        temperature: temperature,
+                        inspiration: inspiration,
+                        max_length: 300
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                // Format the recipe
+                const recipeText = data.recipe;
+                content.innerHTML = `<pre>${recipeText}</pre>`;
+
+                output.style.display = 'block';
+            } catch (error) {
+                content.innerHTML = `
+                    <p class="error">
+                        Error generating recipe: ${error.message}
+                    </p>
+                    <p class="error-hint">
+                        Make sure the model is trained.
+                        Run: python src/matchagen/main.py
+                    </p>
+                `;
+                output.style.display = 'block';
+            } finally {
+                loading.style.display = 'none';
+                generateBtn.disabled = false;
+            }
+        });
+
+        // Allow Enter key to generate
+        inspirationInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                generateBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    image: matchagen-backend:latest
+    container_name: matchagen-backend
+    restart: unless-stopped
+    environment:
+      - LOG_LEVEL=info
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./artefacts:/app/artefacts:ro
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - matchagen-network
+
+  frontend:
+    build:
+      context: frontend
+    image: matchagen-frontend:latest
+    container_name: matchagen-frontend
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - matchagen-network
+
+networks:
+  matchagen-network:
+    driver: bridge

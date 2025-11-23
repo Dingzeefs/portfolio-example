@@ -1,0 +1,23 @@
+2025-11-18 23:10:19 | INFO     | ============================================================
+2025-11-18 23:10:19 | INFO     | Step 1: Loading/scraping recipe data
+2025-11-18 23:10:19 | INFO     | ============================================================
+2025-11-18 23:10:19 | INFO     | Recipe data already exists at assets/matcha_recipes_combined.txt
+2025-11-18 23:10:19 | INFO     | ============================================================
+2025-11-18 23:10:19 | INFO     | Step 2: Loading pretrained model
+2025-11-18 23:10:19 | INFO     | ============================================================
+2025-11-18 23:10:19 | INFO     | Loading pretrained model: distilgpt2
+2025-11-18 23:10:21 | INFO     | ============================================================
+2025-11-18 23:10:21 | INFO     | Step 3: Preparing dataset
+2025-11-18 23:10:21 | INFO     | ============================================================
+2025-11-18 23:10:21 | INFO     | Loading recipes from assets/matcha_recipes_combined.txt
+2025-11-18 23:10:21 | INFO     | Found 220 recipes
+Map:   0%|          | 0/220 [00:00<?, ? examples/s]Map: 100%|██████████| 220/220 [00:01<00:00, 130.26 examples/s]Map: 100%|██████████| 220/220 [00:01<00:00, 129.52 examples/s]
+Map:   0%|          | 0/220 [00:00<?, ? examples/s]Map: 100%|██████████| 220/220 [00:00<00:00, 1572.18 examples/s]Map: 100%|██████████| 220/220 [00:00<00:00, 1503.41 examples/s]
+2025-11-18 23:10:26 | INFO     | ============================================================
+2025-11-18 23:10:26 | INFO     | Step 4: Fine-tuning model
+2025-11-18 23:10:26 | INFO     | ============================================================
+2025-11-18 23:10:26 | INFO     | Starting training...
+  0%|          | 0/110 [00:00<?, ?it/s]/Users/DINGZEEFS/MADS-deployment/2-frontend/matchagen/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py:692: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, device pinned memory won't be used.
+  warnings.warn(warn_msg)
+`loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+  1%|          | 1/110 [00:18<34:05, 18.77s/it]  2%|▏         | 2/110 [01:21<1:19:51, 44.36s/it]  3%|▎         | 3/110 [02:22<1:32:55, 52.11s/it]
