@@ -131,7 +131,7 @@ The journey from 75% to 84.30% accuracy revealed that for small images (32×32),
 
 **Hypothesis Status:** REJECTED
 
-**Key Discovery:** This was the most surprising result. ResNet18 achieved only 82.20% - **worse than our custom CNN** (84.30%)! The frozen backbone performed terribly (42%) because ImageNet features learned at 224×224 resolution don't transfer well to 32×32 images.
+**Key Discovery:** This was the most surprising result. ResNet18 achieved only 82.20% - **worse than my custom CNN** (84.30%)! The frozen backbone performed terribly (42%) because ImageNet features learned at 224×224 resolution don't transfer well to 32×32 images.
 
 **The Silver Lining:** ResNet18 achieved much better generalization (3.70% gap vs 11.32%). If generalization matters more than peak accuracy, fine-tuned ResNet18 is the better choice.
 

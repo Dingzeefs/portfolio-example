@@ -1,5 +1,5 @@
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
-title : Jane Doe ’ s Data Science Portfolio
+title: Liam's Data Science Portfolio
 description : A collection of my projects

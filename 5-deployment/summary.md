@@ -21,7 +21,7 @@ View the deployed project here: [http://46.224.49.75:8080/](http://46.224.49.75:
 
 ### The Dataset: Matcha Recipes
 
-We curated a dataset of matcha recipes by collecting both traditional and modern sources, formatting each entry as follows:
+I curated a dataset of matcha recipes by collecting both traditional and modern sources, formatting each entry as follows:
 
 ```
 Title: [Recipe Name]
@@ -54,7 +54,7 @@ T5 was selected for its:
 
 ### Fine-tuning Strategy: Layer Freezing
 
-To prevent overfitting on a small dataset and speed up training, we froze the encoder and trained only the decoder:
+To prevent overfitting on a small dataset and speed up training, I froze the encoder and trained only the decoder:
 
 ```python
 # Freeze encoder layers
